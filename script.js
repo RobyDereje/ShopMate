@@ -65,6 +65,12 @@ const clearList = ()=>{
 }
 
 btn.addEventListener('click', processor)
+btn.addEventListener('touchend', function() {
+    processor();
+    btn.classList.add('clicked');
+    setTimeout(function() {
+        btn.classList.remove('clicked');
+    }, 100););
 input.addEventListener('keydown', (e)=>{
     if(e.key === 'Enter'){
         processor()
